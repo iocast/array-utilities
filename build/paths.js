@@ -8,6 +8,7 @@ var paths = {
   root: appRoot,
   source: appRoot + '**/*.js',
   output: 'dist/',
+  importsToAdd: [],
   packageName: pkg.name
 };
 
