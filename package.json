@@ -1,5 +1,5 @@
 {
-  "name": "array-utilities",
+  "name": "@iocast/array-utilities",
   "version": "0.0.2",
   "description": "Node array utilities",
   "main": "index.js",
