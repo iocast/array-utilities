@@ -4,7 +4,10 @@
   "description": "Node array utilities",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/gulp build"
+    "build": "gulp build",
+    "prepush": "gulp prepare-release --bump=patch",
+    "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish --access public",
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -16,6 +19,7 @@
     "url": "https://github.com/iocast/array-utilities/issues"
   },
   "homepage": "https://github.com/iocast/array-utilities#readme",
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-syntax-flow": "^6.18.0",
@@ -41,5 +45,16 @@
     "run-sequence": "^2.2.0",
     "through2": "^2.0.3",
     "vinyl-paths": "^2.1.0"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    },
+    "peerDependencies": {},
+    "dependencies": {},
+    "devDependencies": {}
   }
 }
