@@ -1,8 +1,7 @@
 var path = require('path');
-var paths = require('./paths');
 
 exports.base = function() {
-  var config = {
+  return {
     filename: '',
     filenameRelative: '',
     sourceMap: true,
@@ -12,15 +11,14 @@ exports.base = function() {
     comments: false,
     compact: false,
     code: true,
-    presets: ['es2015-loose', 'stage-1'],
+    presets: [['es2015', { loose: true }], 'stage-1'],
     plugins: [
       'syntax-flow',
       'transform-decorators-legacy',
+      'transform-flow-strip-types'
     ]
   };
-  config.plugins.push('transform-flow-strip-types');
-  return config;
-}
+};
 
 exports.commonjs = function() {
   var options = exports.base();
@@ -42,12 +40,6 @@ exports.system = function() {
 
 exports.es2015 = function() {
   var options = exports.base();
-  options.presets = ['stage-1']
+  options.presets = ['stage-1'];
   return options;
 };
-
-exports['native-modules'] = function() {
-  var options = exports.base();
-  options.presets[0] = 'es2015-loose-native-modules';
-  return options;
-}
