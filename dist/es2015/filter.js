@@ -1,8 +1,8 @@
 
 export function filter(items, property, filterFunc) {
-  if (property === "" || property === undefined) return items;
+  if (property === '' || property === undefined) return items;
 
-  let properties = property.split(".");
+  let properties = property.split('.');
 
   return items.filter(value => {
     let propValue = exists(value, properties, 0);

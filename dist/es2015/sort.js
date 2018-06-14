@@ -1,6 +1,6 @@
 
 export function sort(array, property, direction) {
-  let properties = property.split(".");
+  let properties = property.split('.');
   return array.sort((val1, val2) => {
     let a = val1;
     let b = val2;

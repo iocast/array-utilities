@@ -6,7 +6,7 @@ define(['exports'], function (exports) {
   });
   exports.sort = sort;
   function sort(array, property, direction) {
-    var properties = property.split(".");
+    var properties = property.split('.');
     return array.sort(function (val1, val2) {
       var a = val1;
       var b = val2;

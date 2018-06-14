@@ -13,12 +13,12 @@
  * @example "filter(list, 'settings.step', this.exists.bind(this))"
  */
 export function filter(items, property, filterFunc) {
-  if (property === "" || property === undefined) return items;
+  if (property === '' || property === undefined) return items;
 
-  let properties = property.split(".");
+  let properties = property.split('.');
 
   return items.filter(value => {
-    let propValue = exists(value, properties, 0)
+    let propValue = exists(value, properties, 0);
     if (typeof filterFunc === 'function') {
       return filterFunc(property, propValue);
     }

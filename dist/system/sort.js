@@ -4,7 +4,7 @@ System.register([], function (_export, _context) {
   "use strict";
 
   function sort(array, property, direction) {
-    var properties = property.split(".");
+    var properties = property.split('.');
     return array.sort(function (val1, val2) {
       var a = val1;
       var b = val2;

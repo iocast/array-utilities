@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.filter = filter;
 function filter(items, property, filterFunc) {
-  if (property === "" || property === undefined) return items;
+  if (property === '' || property === undefined) return items;
 
-  var properties = property.split(".");
+  var properties = property.split('.');
 
   return items.filter(function (value) {
     var propValue = exists(value, properties, 0);
