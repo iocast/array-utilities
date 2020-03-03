@@ -1,18 +1,18 @@
-define(['exports', './filter', './sort'], function (exports, _filter, _sort) {
-  'use strict';
+define(["exports", "./filter", "./sort"], function (_exports, _filter, _sort) {
+  "use strict";
 
-  Object.defineProperty(exports, "__esModule", {
+  Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  Object.defineProperty(exports, 'filter', {
+  Object.defineProperty(_exports, "filter", {
     enumerable: true,
-    get: function () {
+    get: function get() {
       return _filter.filter;
     }
   });
-  Object.defineProperty(exports, 'sort', {
+  Object.defineProperty(_exports, "sort", {
     enumerable: true,
-    get: function () {
+    get: function get() {
       return _sort.sort;
     }
   });

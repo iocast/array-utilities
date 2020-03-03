@@ -1,10 +1,11 @@
-define(['exports'], function (exports) {
-  'use strict';
+define(["exports"], function (_exports) {
+  "use strict";
 
-  Object.defineProperty(exports, "__esModule", {
+  Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  exports.sort = sort;
+  _exports.sort = sort;
+
   function sort(array, property, direction) {
     var properties = property.split('.');
     return array.sort(function (val1, val2) {
@@ -15,6 +16,7 @@ define(['exports'], function (exports) {
         a = val2;
         b = val1;
       }
+
       return getValue(a, properties, 0) > getValue(b, properties, 0);
     });
   }
@@ -24,8 +26,10 @@ define(['exports'], function (exports) {
       if (idx === properties.length - 1) {
         return obj[properties[idx]];
       }
+
       return getValue(obj[properties[idx]], properties, idx + 1);
     }
+
     return undefined;
   }
 });

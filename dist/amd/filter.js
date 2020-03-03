@@ -1,20 +1,21 @@
-define(['exports'], function (exports) {
-  'use strict';
+define(["exports"], function (_exports) {
+  "use strict";
 
-  Object.defineProperty(exports, "__esModule", {
+  Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  exports.filter = filter;
+  _exports.filter = filter;
+
   function filter(items, property, filterFunc) {
     if (property === '' || property === undefined) return items;
-
     var properties = property.split('.');
-
     return items.filter(function (value) {
       var propValue = exists(value, properties, 0);
+
       if (typeof filterFunc === 'function') {
         return filterFunc(property, propValue);
       }
+
       return propValue ? true : false;
     });
   }
@@ -24,8 +25,10 @@ define(['exports'], function (exports) {
       if (idx === properties.length - 1) {
         return obj[properties[idx]];
       }
+
       return exists(obj[properties[idx]], properties, idx + 1);
     }
+
     return null;
   }
 });
